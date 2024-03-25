@@ -36,7 +36,7 @@ def feedback_form():
     name = st.text_input("Your Name")
 
      # Text input for recipient email
-    recipient_email = st.text_input("Recipient Email", help="Enter Your's email address")
+    recipient_email = st.text_input("Email", help="Enter Your's email address")
 
     # Text area for feedback message
     feedback_message = st.text_area("Feedback Message", height=150)
