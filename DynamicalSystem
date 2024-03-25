@@ -1,0 +1,12 @@
+digraph system_graph {
+	graph [rankdir=LR]
+	node [color="#00cc00" fontcolor="#444444" penwidth=2 shape=box style=rounded]
+	Node1 [label=<<table border="0" cellborder="0"><tr><td colspan="2"><b>Node1</b></td></tr><tr><td><font color="#1666ff">x</font> = 1.0</td></tr><tr><td><font color="#cc3355">x</font> = <font color="#1666ff">x</font> </td></tr></table>>]
+	node [color="#cc0000" fontcolor="#444444" penwidth=2 shape=box style=rounded]
+	Node2 [label=<<table border="0" cellborder="0"><tr><td colspan="2"><b>Node2</b></td></tr><tr><td><font color="#188855">x</font> </td></tr><tr><td><font color="#1666ff">y</font> = 2.0</td></tr><tr><td><font color="#1666ff">dy_dt</font> = -<font color="#188855">x</font> * <font color="#1666ff">y</font>**2</td></tr><tr><td><font color="#cc3355">y</font> = <font color="#1666ff">y</font> </td></tr><tr><td><font color="#cc3355">dy_dt</font> = <font color="#1666ff">dy_dt</font> </td></tr></table>>]
+	node [color="#0000cc" fontcolor="#444444" penwidth=2 shape=box style=rounded]
+	Node3 [label=<<table border="0" cellborder="0"><tr><td colspan="2"><b>Node3</b></td></tr><tr><td><font color="#188855">x</font> </td></tr><tr><td><font color="#188855">y</font> </td></tr><tr><td><font color="#1666ff">z</font> = 3.0</td></tr><tr><td><font color="#1666ff">dz_dt</font> = <font color="#188855">x</font> * <font color="#188855">y</font> - <font color="#1666ff">z</font></td></tr><tr><td><font color="#cc3355">z</font> = <font color="#1666ff">z</font> </td></tr><tr><td><font color="#cc3355">dz_dt</font> = <font color="#1666ff">dz_dt</font> </td></tr></table>>]
+	Node1 -> Node2 [label=<edge_Node1_Node2 (<font color="#cc3355">x</font> -&gt; <font color="#188855">x</font>)> arrowhead=empty]
+	Node1 -> Node3 [label=<edge_Node1_Node3 (<font color="#cc3355">x</font> -&gt; <font color="#188855">x</font>)> arrowhead=empty]
+	Node2 -> Node3 [label=<edge_Node2_Node3 (<font color="#cc3355">y</font> -&gt; <font color="#188855">x</font>)> arrowhead=empty]
+}
