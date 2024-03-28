@@ -4,6 +4,9 @@ from modeci_mdf.utils import simple_connect
 from modeci_mdf.execution_engine import EvaluableGraph
 import numpy as np
 import matplotlib.pyplot as plt
+# Add Graphviz bin directory to PATH
+graphviz_bin_dir = os.path.join(sys.prefix, "bin")
+os.environ["PATH"] += os.pathsep + graphviz_bin_dir
 
 def app():
     st.title("Spring-Mass-Damper System Simulation")
