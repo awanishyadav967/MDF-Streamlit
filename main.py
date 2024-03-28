@@ -1,6 +1,10 @@
+import os
+import sys
 import streamlit as st
 from streamlit_option_menu import option_menu
 import feedback,home, about,contact
+graphviz_bin_dir = os.path.join(sys.prefix, "bin")
+os.environ["PATH"] += os.pathsep + graphviz_bin_dir
 
 st.set_page_config(
     page_title="MDF Model",
