@@ -1,7 +1,8 @@
+graphviz==0.17
 streamlit==1.32.2
 numpy==1.21.3
 matplotlib==3.4.3
 modeci_mdf==0.4.9
 streamlit_option_menu==0.3.12
-graphviz==0.17
+
 
