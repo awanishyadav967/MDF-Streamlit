@@ -63,26 +63,7 @@ def execute_model():
     # Generate a graph image
     model.to_graph_image(engine="dot", output_format="png", filename_root="SpringMassSystem", is_horizontal=True)
 
-    # Execute the graph over time
-    eg = EvaluableGraph(graph, verbose=False)
-    dt = 0.01  # Time step
-    duration = 10  # Simulation duration
-    t = 0
-    times = []
-    position_values = []
-
-    while t <= duration:
-        times.append(t)
-        eg.evaluate(time_increment=dt)
-        position_values.append(eg.enodes["Mass"].evaluable_outputs["position_output"].curr_value)  # Accessing position output port value
-
-        # Update the position of the mass based on a sinusoidal motion
-        omega = 2 * np.pi  # Angular frequency (radians per second)
-        amplitude = 0.5  # Amplitude of the sinusoidal motion
-        offset = 1.0  # Offset from the equilibrium position
-        node1.parameters[0].value = amplitude * np.sin(omega * t) + offset  # Accessing position parameter value
-
-        t += dt
+   
 
     # Display the graph image in Streamlit
     st.title("Spring-Mass-Damper System")
