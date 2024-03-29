@@ -4,8 +4,8 @@ from modeci_mdf.utils import simple_connect
 from modeci_mdf.execution_engine import EvaluableGraph
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image as PILImage
-#from IPython.display import Image
+#from PIL import Image as PILImage
+from IPython.display import Image
 
 def app():
     st.title("Multi-Mass System Simulation")
@@ -82,8 +82,8 @@ def execute_model():
 
     # Display the generated graph image
     st.write("Displaying the generated graph image")
-    #st.image(graph_image_file)
-    pil_image = PILImage.open(graph_image_file)
+    st.image(graph_image_file)
+    #pil_image = PILImage.open(graph_image_file)
 
 
      # Define time array
