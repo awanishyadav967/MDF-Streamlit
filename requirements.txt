@@ -5,4 +5,5 @@ matplotlib==3.4.3
 modeci_mdf==0.4.9
 streamlit_option_menu==0.3.12
 pygraphviz
+ipython
 
