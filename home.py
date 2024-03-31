@@ -1,11 +1,7 @@
 import streamlit as st
-from modeci_mdf.mdf import *
-from modeci_mdf.utils import simple_connect
-from modeci_mdf.execution_engine import EvaluableGraph
 import numpy as np
 import matplotlib.pyplot as plt
-#from PIL import Image as PILImage
-from IPython.display import Image
+from modeci_mdf.mdf import *
 
 def app():
     st.title("Multi-Mass System Simulation")
@@ -83,16 +79,14 @@ def execute_model():
     # Display the generated graph image
     st.write("Displaying the generated graph image")
     st.image(graph_image_file)
-    #pil_image = PILImage.open(graph_image_file)
 
-
-     # Define time array
+    # Define time array
     t = np.linspace(0, 10, 100)
 
-    # Define displacement functions (e.g., sine waves for simplicity)
-    displacement1 = np.sin(t)
-    displacement2 = np.cos(t)
-    displacement3 = np.sin(t + np.pi/4)  # Adding phase difference for variety
+    # Define displacement functions for each mass
+    displacement1 = np.sin(2 * np.pi * t)  # Unique expression for mass 1
+    displacement2 = np.cos(2 * np.pi * t)  # Unique expression for mass 2
+    displacement3 = np.sin(2 * np.pi * t + np.pi/4)  # Unique expression for mass 3
 
     # Plotting the displacements over time
     st.write("Plotting the displacements over time")
@@ -107,32 +101,50 @@ def execute_model():
     plt.grid(True)
     st.pyplot(plt)
 
-    # Calculate kinetic energy (KE)
-    def calculate_ke(m, v):
-        return 0.5 * m * v ** 2
+    # Define velocity functions for each mass
+    velocity1 = np.gradient(displacement1, t)  # First derivative of displacement for mass 1
+    velocity2 = np.gradient(displacement2, t)  # First derivative of displacement for mass 2
+    velocity3 = np.gradient(displacement3, t)  # First derivative of displacement for mass 3
 
-    # Calculate potential energy (PE)
-    def calculate_pe(k, x):
-        return 0.5 * k * x ** 2
+    # Define acceleration functions for each mass
+    acceleration1 = np.gradient(velocity1, t)  # Second derivative of displacement for mass 1
+    acceleration2 = np.gradient(velocity2, t)  # Second derivative of displacement for mass 2
+    acceleration3 = np.gradient(velocity3, t)  # Second derivative of displacement for mass 3
 
-    # Define velocity functions (e.g., cosine waves for simplicity)
-    velocity1 = np.cos(t)
-    velocity2 = np.sin(t)
-    velocity3 = np.cos(t + np.pi/6)  # Adding phase difference for variety
+    # Plotting the velocities over time
+    st.write("Plotting the velocities over time")
+    plt.figure(figsize=(10, 5))
+    plt.plot(t, velocity1, label='Velocity Mass 1', color='blue')
+    plt.plot(t, velocity2, label='Velocity Mass 2', color='orange')
+    plt.plot(t, velocity3, label='Velocity Mass 3', color='green')
+    plt.xlabel('Time')
+    plt.ylabel('Velocity')
+    plt.title('Velocity over Time for Multiple Masses')
+    plt.legend()
+    plt.grid(True)
+    st.pyplot(plt)
 
-    # Define spring extensions (e.g., sine waves for simplicity)
-    extension1 = np.sin(t)
-    extension2 = np.cos(t)
-    extension3 = np.sin(t + np.pi/3)  # Adding phase difference for variety
+    # Plotting the accelerations over time
+    st.write("Plotting the accelerations over time")
+    plt.figure(figsize=(10, 5))
+    plt.plot(t, acceleration1, label='Acceleration Mass 1', color='blue')
+    plt.plot(t, acceleration2, label='Acceleration Mass 2', color='orange')
+    plt.plot(t, acceleration3, label='Acceleration Mass 3', color='green')
+    plt.xlabel('Time')
+    plt.ylabel('Acceleration')
+    plt.title('Acceleration over Time for Multiple Masses')
+    plt.legend()
+    plt.grid(True)
+    st.pyplot(plt)
 
     # Calculate kinetic energy for each mass
-    ke1 = calculate_ke(m1, velocity1)
-    ke2 = calculate_ke(m2, velocity2)
-    ke3 = calculate_ke(m3, velocity3)
+    ke1 = 0.5 * m1 * velocity1 ** 2
+    ke2 = 0.5 * m2 * velocity2 ** 2
+    ke3 = 0.5 * m3 * velocity3 ** 2
 
     # Calculate potential energy for each spring
-    pe1 = calculate_pe(k1, extension1)
-    pe2 = calculate_pe(k2, extension2)
+    pe1 = 0.5 * k1 * displacement1 ** 2
+    pe2 = 0.5 * k2 * displacement2 ** 2
     pe_total = pe1 + pe2  # Total potential energy of the system
 
     # Calculate total energy of the system
@@ -174,10 +186,6 @@ def execute_model():
     plt.legend()
     plt.grid(True)
     st.pyplot(plt)
-
-
-
-
 
 if __name__ == "__main__":
     app()
