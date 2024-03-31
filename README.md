@@ -1,21 +1,48 @@
-## OutReachy
+# Multi-Mass System Simulation
 
-## Project Description
-The project aims to introduce participants to Model Description Format (MDF), a tool for defining and simulating dynamical systems using a modular approach. MDF enables users to describe complex models in a structured format, making it easier to develop, share, and reproduce computational models across various domains, including biology, physics, and engineering.
+This Streamlit app simulates the behavior of a multi-mass system composed of interconnected masses and springs. It allows users to explore how the system's dynamics evolve over time.
 
-### Task 2: Create an OSB Account and Edit a Jupyter Notebook
+## Purpose
 
-- Created a new account on Open Source Brain v2.
-- Created a new workspace from the ModECI MDF OSBv2 repository.
-- Installed the latest version of MDF in the workspace.
-- Opened and reviewed the Simple Example Jupyter notebook to understand MDF concepts.
-- Created a new notebook in the workspace, implementing an MDF model with connected nodes representing a dynamical system in biology or physics.
+The primary purpose of this app is to provide an interactive environment for users to visualize and analyze the behavior of a multi-mass system under different conditions. By adjusting parameters such as mass and spring constants, users can observe changes in the system's displacements, velocities, accelerations, and energy over time.
 
-### Task 3: Create a Simple Streamlit Application Using MDF
+## Components
 
-- Developed a simple graphical application using Streamlit.
-- Imported MDF and allowed model execution at the press of a button.
-- Implemented output display and potentially plotted the output at multiple time points.
-- Hosted the public app and provided a link for mentors to review.
+- **Simulation Execution:** Users can initiate the simulation by clicking the "Run Simulation" button. This triggers the calculation and visualization of various system properties.
+- **Model Definition:** The multi-mass system is defined using the Model Description Format (MDF), allowing for flexible and modular representation of the system components.
+- **Graph Visualization:** The app generates a visual representation of the multi-mass system graph, illustrating the connections between masses and springs.
+- **Dynamic Plots:** Plots of displacement, velocity, acceleration, kinetic energy, potential energy, and total energy are provided to help users understand how these parameters evolve over time.
 
+## Usage
 
+1. **Run Simulation:** Click the "Run Simulation" button to initiate the simulation.
+2. **Visualization:** Explore the generated graph image to understand the system's structure.
+3. **Analysis:** Examine the dynamic plots to observe the evolution of key system properties over time.
+
+## Screenshots
+
+1. **Graph image of the multi-mass system:**
+   ![Graph Image](Screenshot50.png)
+
+2. **Displacement over time for multiple masses:**
+   ![Displacement Plot](Screenshot51.png)
+
+3. **Velocity over time for multiple masses:**
+   ![Velocity Plot](Screenshot52.png)
+
+4. **Acceleration over time for multiple masses:**
+   ![Acceleration Plot](Screenshot53.png)
+
+5. **Kinetic energy over time for the system:**
+  ![Energy Plot](Screenshot54.png)
+
+6. **Potential energy over time for the system:**
+   ![Energy Plot](Screenshot55.png)
+
+7. **Potential energy over time for the system:**
+   ![Energy Plot](Screenshot56.png)
+   
+
+## Conclusion
+
+This Streamlit app serves as a valuable tool for studying the behavior of multi-mass systems in engineering and physics contexts. It offers an intuitive interface for experimenting with system parameters and visualizing the resulting dynamics, facilitating deeper insights into complex physical systems.
