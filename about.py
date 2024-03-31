@@ -1,36 +1,33 @@
 import streamlit as st
 
+
 def about_page():
+
+
     st.write(
-        """
-        ## About This App
+            """
+            ## About This Multi-Mass System Simulation App
 
-        This Streamlit app demonstrates the execution of a dynamical system model defined using the Model Description Format (MDF).
+            This Streamlit app simulates the behavior of a multi-mass system composed of interconnected masses and springs. It allows users to explore how the system's dynamics evolve over time.
 
-        ### Purpose:
-        The purpose of this app is to provide an interactive environment for users to explore the behavior of the dynamical system model.
+            ### Purpose:
+            The primary purpose of this app is to provide an interactive environment for users to visualize and analyze the behavior of a multi-mass system under different conditions. By adjusting parameters such as mass and spring constants, users can observe changes in the system's displacements, velocities, accelerations, and energy over time.
 
-        ### Components:
-        - Streamlit App: The Streamlit app provides an interactive user interface for configuring and executing the model.
-        - Model Definition: The MDF model is defined using Python classes and objects. It consists of three nodes interconnected in a specific pattern.
-        - Model Parameters: The user can adjust the initial values of the variables (x, y, and z) through sliders in the sidebar.
-        - Execute Model Button: Upon clicking the "Execute Model" button, the model is created with the user-defined parameters, and its evaluation is triggered.
-        - Evaluation: The model is evaluated using an execution engine (EvaluableGraph) from the modeci_mdf library. The evaluation progresses in discrete time increments, updating the state of the model.
-        - Output Display: The output of each node (x, y, and z) is displayed to the user after the model evaluation is complete.
-        - Sidebar Navigation: Allows users to navigate between different sections.
+            ### Components:
+            - **Simulation Execution:** Users can initiate the simulation by clicking the "Run Simulation" button. This triggers the calculation and visualization of various system properties.
+            - **Model Definition:** The multi-mass system is defined using the Model Description Format (MDF), allowing for flexible and modular representation of the system components.
+            - **Graph Visualization:** The app generates a visual representation of the multi-mass system graph, illustrating the connections between masses and springs.
+            - **Dynamic Plots:** Plots of displacement, velocity, acceleration, kinetic energy, potential energy, and total energy are provided to help users understand how these parameters evolve over time.
 
-        ### Execution Flow:
-        1. The user adjusts the initial values of x, y, and z using sliders in the sidebar.
-        2. The user clicks the "Execute Model" button to run the simulation.
-        3. The model is created with the specified parameters, and its evaluation begins.
-        4. As the model is evaluated, the current values of x, y, and z are displayed to the user.
-        5. Real-time plotting shows how the values of x, y, and z change over time.
-        6. The user can navigate between different sections of the app using the sidebar options.
+            ### Usage:
+            1. **Run Simulation:** Click the "Run Simulation" button to initiate the simulation.
+            2. **Visualization:** Explore the generated graph image to understand the system's structure.
+            3. **Analysis:** Examine the dynamic plots to observe the evolution of key system properties over time.
 
-        ### Conclusion:
-        This Streamlit app provides an interactive environment for users to explore the behavior of a dynamical system model defined in the MDF format. It offers flexibility in adjusting model parameters and visualizing the system's output in real-time. Additionally, the sidebar navigation enhances user experience by providing access to different sections of the app.
-        """
-    )
+            ### Conclusion:
+            This Streamlit app serves as a valuable tool for studying the behavior of multi-mass systems in engineering and physics contexts. It offers an intuitive interface for experimenting with system parameters and visualizing the resulting dynamics, facilitating deeper insights into complex physical systems.
+            """
+        )
 
 
 def app():
