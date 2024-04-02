@@ -33,14 +33,7 @@ The primary purpose of this app is to provide an interactive environment for use
 4. **Acceleration over time for multiple masses:**
    ![Acceleration Plot](Screenshot53.png)
 
-5. **Kinetic energy over time for the system:**
-  ![Energy Plot](Screenshot54.png)
 
-6. **Potential energy over time for the system:**
-   ![Energy Plot](Screenshot55.png)
-
-7. **Potential energy over time for the system:**
-   ![Energy Plot](Screenshot56.png)
    
 
 ## Conclusion
