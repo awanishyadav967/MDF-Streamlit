@@ -22,7 +22,7 @@ The primary purpose of this app is to provide an interactive environment for use
 ## Screenshots
 
 1. **Graph image of the multi-mass system:**
-   ![Graph Image](Screenshot50.png)
+   ![Graph Image](Screenshot49.png)
 
 2. **Displacement over time for multiple masses:**
    ![Displacement Plot](Screenshot51.png)
